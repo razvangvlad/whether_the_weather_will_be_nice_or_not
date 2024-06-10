@@ -1,0 +1,74 @@
+models:
+  - name: weather_raw_p
+    description: Weather data table containing all records uniquely identifiable date, latitude and longitude. Incremental based on surrogate key (LATITUDE,LONGITUDE,VALIDDATE).
+    columns:
+      - name: WEATHER_DATA_ID
+        description: The unique surrogate key (LATITUDE,LONGITUDE,VALIDDATE).
+        data_tests:
+          - not_null
+          - unique
+      
+      - name: LATITUDE
+        description: The latitude coordinate.
+        tests:
+          - not_null
+
+      - name: LONGITUDE
+        description: The longitude coordinate.
+        tests:
+          - not_null
+
+      - name: VALIDDATE
+        description: The date and time of the weather observation.
+        tests:
+          - not_null
+
+      - name: WEATHER_CONDITION_ID
+        description: The ID representing the weather condition.
+
+      - name: TEMPERATURE
+        description: The temperature at the given location and time.
+
+      - name: TEMPERATURE_UNIT
+        description: The unit of measure for temperature.
+
+      - name: PRECIPITATION
+        description: The amount of precipitation at the given location and time.
+
+      - name: PRECIPITATION_UNIT
+        description: The unit of measure for precipitation.
+
+      - name: HUMIDITY
+        description: The relative humidity at the given location and time.
+
+      - name: HUMIDITY_UNIT
+        description: The unit of measure for humidity.
+
+      - name: PRESSURE
+        description: The atmospheric pressure at the given location and time.
+
+      - name: PRESSURE_UNIT
+        description: The unit of measure for atmospheric pressure.
+
+      - name: DEW_POINT
+        description: The dew point temperature at the given location and time.
+
+      - name: DEW_POINT_UNIT
+        description: The unit of measure for the dew point temperature.
+
+      - name: WIND_SPEED
+        description: The wind speed at the given location and time.
+
+      - name: WIND_SPEED_UNIT
+        description: The unit of measure for wind speed.
+
+      - name: CLOUD_COVER
+        description: The percentage of cloud cover at the given location and time.
+
+      - name: CLOUD_COVER_UNIT
+        description: The unit of measure for cloud cover.
+
+      - name: LOAD_TIMESTAMP
+        description: The timestamp when the data was loaded into the table.
+        tests:
+          - not_null

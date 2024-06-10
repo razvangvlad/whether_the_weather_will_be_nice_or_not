@@ -1,0 +1,20 @@
+models:
+  - name: d_weather_condition
+    description: >
+      Dimension table containing unique records for each weather condition as defined 
+      by the API provider. Uniquely identifiable by the WEATHER_CONDITION_ID column.
+    columns:
+      - name: WEATHER_CONDITION_ID
+        description: >
+          The unique identifier for the weather condition as defined by the API provider.
+        tests:
+          - not_null
+          - unique
+
+      - name: CONDITION_DESCRIPTION
+        description: Description of the weather condition.
+        tests:
+          - not_null
+
+      - name: TIME_OF_DAY
+        description: The time of day associated with the weather condition.

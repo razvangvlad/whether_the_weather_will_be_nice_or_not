@@ -1,0 +1,13 @@
+version: 1
+
+sources:
+  - name: staging
+    schema: poc_staging
+    description: >
+      The `poc_staging` schema contains raw weather data sourced as deltas, 
+      allowing for efficient incremental processing.
+    tables:
+      - name: weather_raw
+        description: >
+          Contains one record per combination of date, latitude, and longitude. 
+          The table is truncated after processing is completed.

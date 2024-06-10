@@ -1,0 +1,20 @@
+models:
+  - name: d_unit
+    description: >
+      Dimension table containing unique records for each unit of measurement. 
+      Uniquely identifiable by the surrogate key derived from the UNIT column.
+    columns:
+      - name: UNIT_ID
+        description: >
+          The unique surrogate key derived from the UNIT column.
+        tests:
+          - not_null
+          - unique
+
+      - name: UNIT
+        description: The unit of measurement (e.g., Celsius, mm, hPa).
+        tests:
+          - not_null
+
+      - name: UNIT_DESCRIPTION
+        description: Description of the unit of measurement.

@@ -1,0 +1,28 @@
+models:
+  - name: d_location
+    description: >
+      Location dimension table containing information on latitude, longitude, city, and country. 
+      Uniquely identifiable by the surrogate key based on the combination of LATITUDE and LONGITUDE.
+    columns:
+      - name: LOCATION_ID
+        description: >
+          The unique surrogate key derived from the combination of LATITUDE and LONGITUDE columns.
+        tests:
+          - not_null
+          - unique
+
+      - name: LATITUDE
+        description: The latitude coordinate of the location.
+        tests:
+          - not_null
+
+      - name: LONGITUDE
+        description: The longitude coordinate of the location.
+        tests:
+          - not_null
+
+      - name: CITY
+        description: The city where the location is situated.
+
+      - name: COUNTRY
+        description: The country where the location is situated.

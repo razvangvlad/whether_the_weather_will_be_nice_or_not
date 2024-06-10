@@ -1,0 +1,72 @@
+models:
+  - name: f_weather_data
+    description: >
+      Fact table containing weather data records with references to date, location, 
+      and various measurement units. Incremental based on the surrogate key derived from the 
+      combination of LATITUDE, LONGITUDE, and VALIDDATE.
+    columns:
+      - name: WEATHER_DATA_ID
+        description: >
+          The unique surrogate key derived from the combination of LATITUDE, LONGITUDE, 
+          and VALIDDATE.
+        tests:
+          - not_null
+          - unique
+
+      - name: DATE_ID
+        description: Reference to the unique identifier in the date dimension table.
+        tests:
+          - not_null
+
+      - name: LOCATION_ID
+        description: Reference to the unique identifier in the location dimension table.
+        tests:
+          - not_null
+
+      - name: WEATHER_CONDITION_ID
+        description: Reference to the measurement unit for the weather condition.
+
+      - name: TEMPERATURE
+        description: The temperature at the given location and time.
+
+      - name: TEMPERATURE_UNIT_ID
+        description: Reference to the measurement unit for temperature.
+
+      - name: PRECIPITATION
+        description: The amount of precipitation at the given location and time.
+
+      - name: PRECIPITATION_UNIT_ID
+        description: Reference to the measurement unit for precipitation.
+
+      - name: HUMIDITY
+        description: The relative humidity at the given location and time.
+
+      - name: HUMIDITY_UNIT_ID
+        description: Reference to the measurement unit for humidity.
+
+      - name: PRESSURE
+        description: The atmospheric pressure at the given location and time.
+
+      - name: PRESSURE_UNIT_ID
+        description: Reference to the measurement unit for pressure.
+
+      - name: DEW_POINT
+        description: The dew point temperature at the given location and time.
+
+      - name: DEW_POINT_UNIT_ID
+        description: Reference to the measurement unit for the dew point.
+
+      - name: WIND_SPEED
+        description: The wind speed at the given location and time.
+
+      - name: WIND_SPEED_UNIT_ID
+        description: Reference to the measurement unit for wind speed.
+
+      - name: CLOUD_COVER
+        description: The percentage of cloud cover at the given location and time.
+
+      - name: CLOUD_COVER_UNIT_ID
+        description: Reference to the measurement unit for cloud cover.
+
+      - name: LOAD_TIMESTAMP
+        description: The timestamp when the data was loaded into the staging table.

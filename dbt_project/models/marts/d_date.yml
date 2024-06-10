@@ -1,0 +1,37 @@
+models:
+  - name: d_date
+    description: >
+      Date dimension table containing information on the date, year, month, day, and day of the week. 
+      Uniquely identifiable by the surrogate key based on the DATE column.
+    columns:
+      - name: DATE_ID
+        description: >
+          The unique surrogate key derived from the DATE column.
+        tests:
+          - not_null
+          - unique
+
+      - name: DATE
+        description: The date of the weather observation.
+        tests:
+          - not_null
+
+      - name: YEAR
+        description: The year part of the date.
+        tests:
+          - not_null
+
+      - name: MONTH
+        description: The month part of the date.
+        tests:
+          - not_null
+
+      - name: DAY
+        description: The day part of the date.
+        tests:
+          - not_null
+
+      - name: DAY_OF_WEEK
+        description: The day of the week for the given date.
+        tests:
+          - not_null

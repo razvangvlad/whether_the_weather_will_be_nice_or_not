@@ -1,0 +1,34 @@
+ID,CONDITION_DESCRIPTION,TIME_OF_DAY
+0,A weather symbol could not be determined,
+1,Clear sky,Day
+2,Light clouds,Day
+3,Partly cloudy,Day
+4,Cloudy,Day
+5,Rain,Day
+6,Rain and snow / sleet,Day
+7,Snow,Day
+8,Rain shower,Day
+9,Snow shower,Day
+10,Sleet shower,Day
+11,Light Fog,Day
+12,Dense fog,Day
+13,Freezing rain,Day
+14,Thunderstorms,Day
+15,Drizzle,Day
+16,Sandstorm,Day
+101,Clear sky,Night
+102,Light clouds,Night
+103,Partly cloudy,Night
+104,Cloudy,Night
+105,Rain,Night
+106,Rain and snow / sleet,Night
+107,Snow,Night
+108,Rain shower,Night
+109,Snow shower,Night
+110,Sleet shower,Night
+111,Light Fog,Night
+112,Dense fog,Night
+113,Freezing rain,Night
+114,Thunderstorms,Night
+115,Drizzle,Night
+116,Sandstorm,Night

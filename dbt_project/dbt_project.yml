@@ -1,0 +1,38 @@
+
+name: 'dbt_project'
+version: '1.0.0'
+
+profile: 'dbt_project'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  dbt_project:
+    configurations:
+      +schema: config
+    nomenclatures:
+      +materialized: seed
+      +schema: staging
+
+models:
+  dbt_project:
+    staging:
+      +materialized: table
+      +schema: staging
+    pstaging:
+      +materialized: table
+      +schema: pstaging
+    marts:
+      +materialized: table
+      +schema: marts
+
+

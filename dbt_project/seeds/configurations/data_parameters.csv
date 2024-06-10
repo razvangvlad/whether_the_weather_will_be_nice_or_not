@@ -1,0 +1,9 @@
+ID,DATAITEM_NAME,DATAITEM_FREQUENCY,DATAITEM_UNIT,UNIT_NAME,ACTIVE
+1,t,2m,C,Celsius,Yes
+2,precip,1h,mm,milimeters,Yes
+3,relative_humidity,2m,p,Percentage,Yes
+4,msl_pressure,,hPa,hectoPascals,Yes
+5,dew_point,2m,C,Celsius,Yes
+6,wind_speed,2m,kmh,Kilometers per hour,Yes
+7,total_cloud_cover,,p,Percentage,Yes
+8,weather_symbol,1h,idx,Symbol index,Yes

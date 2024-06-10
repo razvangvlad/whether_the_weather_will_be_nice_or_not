@@ -1,0 +1,4 @@
+ID,PARAMETER_NAME,PARAMETER_VALUE,ACTIVE
+1,default_time_interval_hours,24,Yes
+2,start_datetime_UTC,2024-06-12 04:00:00,No
+3,end_datetime_UTC,2024-06-12 06:00:00,No

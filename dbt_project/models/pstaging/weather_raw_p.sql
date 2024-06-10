@@ -1,0 +1,51 @@
+{{ config(
+    materialized='incremental',
+    unique_key='WEATHER_DATA_ID'
+) }}
+
+with weather_data as (
+    select
+        LAT as LATITUDE,
+        LON as LONGITUDE,
+        VALIDDATE,
+        WEATHER_SYMBOL_1H as WEATHER_CONDITION_ID,
+        T_2M as TEMPERATURE,
+        PRECIP_1H as PRECIPITATION,
+        RELATIVE_HUMIDITY_2M as HUMIDITY,
+        MSL_PRESSURE as PRESSURE,
+        DEW_POINT_2M as DEW_POINT,
+        WIND_SPEED_2M as WIND_SPEED,
+        TOTAL_CLOUD_COVER as CLOUD_COVER,
+        T_2M_UNIT as TEMPERATURE_UNIT,
+        PRECIP_1H_UNIT as PRECIPITATION_UNIT,
+        RELATIVE_HUMIDITY_2M_UNIT as HUMIDITY_UNIT,
+        MSL_PRESSURE_UNIT as PRESSURE_UNIT,
+        DEW_POINT_2M_UNIT as DEW_POINT_UNIT,
+        WIND_SPEED_2M_UNIT as WIND_SPEED_UNIT,
+        TOTAL_CLOUD_COVER_UNIT as CLOUD_COVER_UNIT,
+        LOAD_TIMESTAMP
+    from {{ source('staging','weather_raw') }}
+)
+
+select
+    {{ dbt_utils.generate_surrogate_key(['LATITUDE','LONGITUDE','VALIDDATE']) }} as WEATHER_DATA_ID,
+    LATITUDE,
+    LONGITUDE,
+    VALIDDATE,
+    WEATHER_CONDITION_ID,
+    TEMPERATURE,
+    TEMPERATURE_UNIT,
+    PRECIPITATION,
+    PRECIPITATION_UNIT,
+    HUMIDITY,
+    HUMIDITY_UNIT,
+    PRESSURE,
+    PRESSURE_UNIT,
+    DEW_POINT,
+    DEW_POINT_UNIT,
+    WIND_SPEED,
+    WIND_SPEED_UNIT,
+    CLOUD_COVER,
+    CLOUD_COVER_UNIT,
+    LOAD_TIMESTAMP
+from weather_data
