@@ -69,6 +69,7 @@ This dbt project is designed to manage and transform weather data. The project i
     - data is push to the F_WEATHER_DATA fact table incrementally based on the surrogate key hash created from (LATITUDE,LONGITUDE,DATE) columns
 
 ## Project Structure
+```plaintext
 dbt_project:
 |--dbt_project.yml
 |--packages.yml
@@ -96,9 +97,9 @@ dbt_project:
 |  |  |--configuration_parameters.csv
 |  |  |--data_parameters.csv
 |  |  |--location_parameters.csv
-|  |--nomenclatures
+|--nomenclatures
 |  |  |--weather_conditions.csv
-
+```
 
 
 
