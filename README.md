@@ -97,7 +97,7 @@ dbt_project:
 |  |  |--configuration_parameters.csv
 |  |  |--data_parameters.csv
 |  |  |--location_parameters.csv
-|--nomenclatures
+|--|--nomenclatures
 |  |  |--weather_conditions.csv
 ```
 
